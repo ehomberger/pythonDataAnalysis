@@ -20,3 +20,24 @@ def randomTrials(elements, trials):
     #turn the data into a series and return it
     s = pd.Series(counts, range(elements)) 
     return s
+
+#roll 'dice' number of 'sides' sided 'trials' number of times
+def rollDice(dice, sides, trials):
+    i = 0
+    j = 0 
+    total = 0
+    results = []
+    while(i < trials):
+        while(j < dice):
+            total += np.random.randint(low = 1, high = sides + 1)
+            j += 1
+        results.append(total)
+        total = 0
+        j = 0
+        i += 1
+
+    counts = [results.count(x) for x in range(dice, dice * sides + 1)]
+    s = pd.Series(counts, range(dice, dice * sides + 1))
+    return s
+
+
