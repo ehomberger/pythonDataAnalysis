@@ -1,3 +1,4 @@
 #I need to look more into this later but here is a start
 *.pyc
 *.pyo
+__psycache__/*
