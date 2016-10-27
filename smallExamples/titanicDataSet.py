@@ -12,17 +12,17 @@ import seaborn as sns
 url = "https://raw.github.com/mattdelhey/kaggle-titanic/master/Data/train.csv"
 titanicData = pd.read_csv(url)
 
-# prints some techincal info about the data
-# titanicData.info()
-
 # adds a new column called pclass and maps it to class. Mapping goes (new column value):(old column value)
 titanicData["class"] = titanicData.pclass.map({1: "First", 2: "Second", 3: "Third"})
 
-# prints the first 5 rows of the data
-# print(titanicData.head())
+def classBarPlot():
+    # generates the barplot
+    sns.barplot(titanicData["class"], titanicData["survived"])
 
-# generates the barplot
-sns.barplot(titanicData["pclass"], titanicData["survived"])
+    # shows the barplot
+    plt.show()
 
-# shows the barplot
-plt.show()
+def violinAge():
+    sns.violinplot(x="class", y="age", hue="sex", data=titanicData, split=True,
+                    inner="quart", palette={"male": "b", "female": "y"})
+    plt.show()
