@@ -17,12 +17,12 @@ titanicData["class"] = titanicData.pclass.map({1: "First", 2: "Second", 3: "Thir
 
 def classBarPlot():
     # generates the barplot
-    sns.barplot(titanicData["class"], titanicData["survived"])
+    sns.barplot(titanicData["class"], titanicData["survived"], x_order = ['First', 'Second', 'Third'])
 
     # shows the barplot
     plt.show()
 
 def violinAge():
     sns.violinplot(x="class", y="age", hue="sex", data=titanicData, split=True,
-                    inner="quart", palette={"male": "b", "female": "y"})
+                    inner="quart", palette={"male": "b", "female": "y"}) 
     plt.show()
