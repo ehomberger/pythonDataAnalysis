@@ -1,0 +1,3 @@
+Sql db:
+    User name - python
+    password - isveryfun
