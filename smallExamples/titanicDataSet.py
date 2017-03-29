@@ -15,6 +15,11 @@ titanicData = pd.read_csv(url)
 # adds a new column called pclass and maps it to class. Mapping goes (new column value):(old column value)
 titanicData["class"] = titanicData.pclass.map({1: "First", 2: "Second", 3: "Third"})
 
+# Return the data so I can play with it in the console
+def returnData():
+    return titanicData
+
+
 def classBarPlot():
     # generates the barplot
     sns.barplot(titanicData["class"], titanicData["survived"], 
