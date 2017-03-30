@@ -41,3 +41,7 @@ def surviveBySex():
     plot.despine(left=True)
     
     plt.show(plot)
+
+
+def addLastName():
+    titanicData['last'] = titanicData['name'].str.split(' ').str.get(0)
